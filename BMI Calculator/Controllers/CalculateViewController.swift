@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculateViewController: UIViewController {
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var weightSlider: UISlider!
@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         let weight = weightSlider.value
         let bmi = Int(weight/pow(height, 2))
         print(bmi)
+        let secondVC = ResultViewController()
+        secondVC.bmiValue = Double(bmi)
+        self.present(secondVC, animated: true,completion: nil)
+        
+     
     }
     
 }
