@@ -5,12 +5,24 @@
 //  Created by Muhammet Emin Kocaman on 11.10.2024.
 //  Copyright © 2024 Angela Yu. All rights reserved.
 //
-
 import Foundation
 
 
-class CalculatorBrain {
-    var bmiValue : String?
-    let bmi = (weight/pow(height, 2))
-    bmiValue = String(format: "%.1f", bmi)
+struct CalculatorBrain {
+    
+    var bmi : Float = 0.0
+    
+    func getBMIValue() -> String {
+        
+        let bmiTo1DecimalPlace = String(format: "%.1f", bmi)
+        return bmiTo1DecimalPlace
+        
+        
+    }
+    mutating func calculateBMI (height:Float,weight:Float)  {
+         bmi = weight / (height * height)
+     
+    }
+   
 }
+
